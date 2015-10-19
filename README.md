@@ -1,8 +1,8 @@
 # Drophunter
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/drophunter`. To experiment with that code, run `bin/console` for an interactive prompt.
+Drophunter is a tool which downloads every public image it can find on [Droplr](https://droplr.com/).
 
-TODO: Delete this and the text above, and describe your gem
+This is very early version of gem. At this moment it downloads all images in your current folder.
 
 ## Installation
 
@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+just type `drophunter` in your console
 
 ## Development
 
