@@ -1,5 +1,6 @@
 require "drophunter/version"
 
 module Drophunter
-  # Your code goes here...
 end
+
+require "drophunter/hunter"
