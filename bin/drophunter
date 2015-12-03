@@ -2,4 +2,4 @@
 
 require 'drophunter'
 
-Drophunter::Hunter.run
+Drophunter::Runner.run
