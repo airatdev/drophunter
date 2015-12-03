@@ -1,0 +1,15 @@
+AllCops:
+  Exclude:
+    - "*.gemspec"
+
+Style/Documentation:
+  Enabled: false
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/StructInheritance:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 100

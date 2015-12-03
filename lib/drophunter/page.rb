@@ -7,20 +7,22 @@ module Drophunter
 
       begin
         something.new(Nokogiri::HTML(open(url)), id).find_and_save
-      rescue OpenURI::HTTPError
-        puts "#{id} doesn't exist on Droplr"
-      rescue RuntimeError
-        puts "#{id} caused an error (redirect?)"
-      rescue SocketError
-        puts "#{id} caused an error (redirect with missing page?)"
-      rescue Errno::ECONNRESET
-        puts "#{id} caused an error (and I have no idea why)"
-      rescue Errno::ETIMEDOUT
-        puts "#{id} caused an error (timed out)"
+      rescue *error_messages.keys => error
+        puts error_messages[error.class]
       end
     end
 
     private
+
+    def error_messages
+      {
+        OpenURI::HTTPError => "#{id} doesn't exist on Droplr",
+        RuntimeError => "#{id} caused an error (redirect?)",
+        SocketError => "#{id} caused an error (redirect with missing page?)",
+        Errno::ECONNRESET => "#{id} caused an error (and I have no idea why)",
+        Errno::ETIMEDOUT => "#{id} caused an error (timed out)"
+      }
+    end
 
     def url
       BASE_URL + id
