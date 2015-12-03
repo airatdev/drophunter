@@ -22,7 +22,10 @@ Or install it yourself as:
 
 ## Usage
 
-just type `drophunter` in your console
+Type of the following commands in your console:
+
+`drophunter` will try all possible IDs (i.e. aaaa, aaab, aaac and so on)
+`drophunter random` will try IDs in random order
 
 ## Development
 

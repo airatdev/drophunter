@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require "drophunter"
+require "drophunter/worker"
 
-Drophunter::Runner.run
+Drophunter::Worker.new(ARGV[0]).run

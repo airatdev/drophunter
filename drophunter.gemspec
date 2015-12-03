@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "drophunter/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "Drophunter"
+  spec.name          = "drophunter"
   spec.description   = "Drophunter is a tool which downloads every public image it can find on https://droplr.com."
   spec.version       = Drophunter::VERSION
   spec.authors       = ["Airat Shigapov"]
