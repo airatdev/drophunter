@@ -11,8 +11,6 @@ module Drophunter
       send("#{strategy || :default}_strategy")
     end
 
-    private
-
     def save_file(id)
       Drophunter::Page.new(id).save(Drophunter::FileTypes::Image)
     end
@@ -23,14 +21,12 @@ module Drophunter
       end
     end
 
-    def random_strategy
+    def random_strategy(&block)
       Enumerator.new do |enumerator|
         loop do
           enumerator.yield(4.times.map { ALLOWED_CHARS[Random.rand(0..ALLOWED_CHARS.length)] }.join)
         end
-      end.each do |id|
-        save_file(id)
-      end
+      end.each { |id| block.call(id) }
     end
   end
 end
