@@ -1,12 +1,14 @@
+require "drophunter/savers/local"
+
 module Drophunter
   class Page < Struct.new(:id)
     BASE_URL = "http://d.pr/i/"
 
-    def save(something)
+    def save(something, saver)
       puts "Downloading #{url}"
 
       begin
-        something.new(Nokogiri::HTML(open(url)), id).find_and_save
+        something.new(Nokogiri::HTML(open(url)), id).find_and_save(saver)
       rescue *error_messages.keys => error
         puts error_messages[error.class]
       end

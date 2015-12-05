@@ -1,6 +1,7 @@
 require "open-uri"
 require "nokogiri"
 require "drophunter/page"
+require "drophunter/savers/local"
 require "drophunter/file_types/image"
 
 module Drophunter
@@ -12,7 +13,9 @@ module Drophunter
     end
 
     def save_file(id)
-      Drophunter::Page.new(id).save(Drophunter::FileTypes::Image)
+      default_saver = Drophunter::Savers::Local.new
+
+      Drophunter::Page.new(id).save(Drophunter::FileTypes::Image, default_saver)
     end
 
     def default_strategy
