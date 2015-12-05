@@ -9,3 +9,5 @@
 /tmp/
 *.png
 *.gem
+.DS_Store
+
